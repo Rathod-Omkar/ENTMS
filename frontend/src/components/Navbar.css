@@ -7,8 +7,9 @@
     flex-direction: column;
     width: 245px;
     padding: 24px 16px;
-    background: #111827;
-    color: #f8fafc;
+    background: #f7f3e9;
+    color: #2c2c29;
+    border-right: 1px solid #e2dac9;
 }
 
 .sidebar-brand {
@@ -16,7 +17,7 @@
     align-items: center;
     gap: 12px;
     padding: 0 8px 28px;
-    border-bottom: 1px solid #293548;
+    border-bottom: 1px solid #e2dac9;
 }
 
 .brand-icon {
@@ -25,28 +26,28 @@
     width: 42px;
     height: 42px;
     flex-shrink: 0;
-    border-radius: 12px;
-    background: #4f46e5;
-    color: white;
+    border-radius: 50%;
+    background: #292927;
+    color: #f8c62c;
     font-size: 23px;
     font-weight: 800;
 }
 
 .sidebar-brand h2 {
     margin: 0;
-    color: white;
+    color: #292927;
     font-size: 16px;
 }
 
 .sidebar-brand p {
     margin: 4px 0 0;
-    color: #9ca3af;
+    color: #858177;
     font-size: 12px;
 }
 
 .nav-section-label {
     margin: 30px 10px 12px;
-    color: #94a3b8;
+    color: #8b867c;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -63,21 +64,21 @@
     align-items: center;
     gap: 12px;
     padding: 12px;
-    border-radius: 8px;
-    color: #cbd5e1;
+    border-radius: 10px;
+    color: #5f5b53;
     font-size: 14px;
     text-decoration: none;
     transition: background 0.15s ease, color 0.15s ease;
 }
 
 .sidebar-nav .nav-link:hover {
-    background: #1f2937;
-    color: white;
+    background: #ece6d8;
+    color: #292927;
 }
 
 .sidebar-nav .nav-link.active {
-    background: #3730a3;
-    color: white;
+    background: #292927;
+    color: #fffdf7;
     font-weight: 600;
 }
 
@@ -91,8 +92,8 @@
 .sidebar-footer {
     margin-top: auto;
     padding: 16px 8px 0;
-    border-top: 1px solid #293548;
-    color: #94a3b8;
+    border-top: 1px solid #e2dac9;
+    color: #858177;
     font-size: 11px;
 }
 

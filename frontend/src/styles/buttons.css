@@ -1,18 +1,18 @@
 button {
     padding: 10px 15px;
     border: 1px solid var(--border);
-    border-radius: 7px;
+    border-radius: 9px;
     background: var(--surface);
     color: var(--text);
     font: inherit;
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
-    transition: background 0.15s ease, border-color 0.15s ease;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
 }
 
 button:hover:not(:disabled) {
-    background: #f1f5f9;
+    background: #f2ecdf;
 }
 
 button:disabled {
@@ -21,29 +21,29 @@ button:disabled {
 }
 
 button[type="submit"] {
-    border-color: var(--primary);
-    background: var(--primary);
-    color: white;
+    border-color: #292927;
+    background: #292927;
+    color: #fffdf7;
 }
 
 button[type="submit"]:hover:not(:disabled) {
-    background: var(--primary-hover);
+    background: #474642;
 }
 
 .primary-btn {
     display: inline-block;
     padding: 10px 16px;
     margin: 8px 0 18px;
-    border-radius: 7px;
-    background: var(--primary);
-    color: white;
+    border-radius: 9px;
+    background: #292927;
+    color: #fffdf7;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
 }
 
 .primary-btn:hover {
-    background: var(--primary-hover);
-    color: white;
+    background: #474642;
+    color: #fffdf7;
     text-decoration: none;
 }

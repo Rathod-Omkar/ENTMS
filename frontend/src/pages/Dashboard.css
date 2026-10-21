@@ -8,7 +8,7 @@
 }
 
 .dashboard-subtitle {
-  color: #6b7280;
+  color: var(--muted);
   margin-bottom: 28px;
 }
 
@@ -25,15 +25,15 @@
 
 .stat-card {
   padding: 20px;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  background: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: 0 10px 24px rgba(78, 69, 48, 0.06);
 }
 
 .stat-card p {
   margin: 0 0 12px;
-  color: #6b7280;
+  color: var(--muted);
   font-size: 14px;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .overdue-card {
-  border-left: 4px solid #dc2626;
+  border-left: 4px solid #d2a11d;
 }
 
 @media (max-width: 600px) {

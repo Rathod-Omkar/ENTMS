@@ -18,15 +18,15 @@
     min-width: 0;
     padding: 22px;
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 16px;
     background: var(--surface);
-    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.03);
+    box-shadow: 0 10px 24px rgba(78, 69, 48, 0.06);
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .stat-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    box-shadow: 0 14px 28px rgba(78, 69, 48, 0.12);
 }
 
 .stat-card p {
@@ -43,7 +43,7 @@
 }
 
 .overdue-card {
-    border-left: 4px solid var(--danger);
+    border-left: 4px solid #d2a11d;
 }
 
 @media (max-width: 1000px) {

@@ -6,7 +6,7 @@
     margin-top: 24px;
     padding: 20px;
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 16px;
     background: var(--surface);
 }
 
@@ -38,23 +38,23 @@
 }
 
 .status-todo {
-    background: #f1f5f9;
-    color: #475569;
+    background: #efe9dd;
+    color: #625e55;
 }
 
 .status-in-progress {
-    background: #dbeafe;
-    color: #1d4ed8;
+    background: #f9e9ad;
+    color: #84620d;
 }
 
 .status-completed {
-    background: #dcfce7;
-    color: #166534;
+    background: #e4eedb;
+    color: #4c7040;
 }
 
 .status-cancelled {
-    background: #fee2e2;
-    color: #991b1b;
+    background: #f6e0d9;
+    color: #98503f;
 }
 
 td select {
