@@ -5,7 +5,7 @@ table {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 10px;
-    overflow: hidden;
+    overflow: visible;
 }
 
 thead {
@@ -41,6 +41,10 @@ td details {
     position: relative;
 }
 
+td details[open] {
+    z-index: 10;
+}
+
 td summary {
     width: fit-content;
     padding: 4px 9px;
@@ -57,7 +61,7 @@ td summary::-webkit-details-marker {
 
 td details div {
     position: absolute;
-    z-index: 5;
+    z-index: 10;
     right: 0;
     top: 28px;
     min-width: 110px;
@@ -66,6 +70,12 @@ td details div {
     border-radius: 8px;
     background: white;
     box-shadow: 0 6px 20px rgba(15, 23, 42, 0.12);
+}
+
+/* Keep the final row's menu within the table's scrollable area on small screens. */
+tbody tr:last-child td details div {
+    top: auto;
+    bottom: calc(100% + 4px);
 }
 
 td details div a,
