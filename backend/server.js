@@ -6,6 +6,7 @@ const connectDB = require("./config/db.js");
 const errorHandler = require("./middleware/errorHandler");
 const taskRoutes = require("./routes/taskRoutes");
 const employeeRoutes = require("./routes/employeeRoutes.js");
+const dashboardRoutes = require("./routes/dashboardRoutes");
 
 
 const app = express();
@@ -14,7 +15,7 @@ app.use(express.json());
 
 app.use("/api/employee",employeeRoutes);
 app.use("/api/tasks", taskRoutes);
-
+app.use("/api/dashboard", dashboardRoutes);
 
 
 

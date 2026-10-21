@@ -1,0 +1,94 @@
+table {
+    width: 100%;
+    margin-top: 22px;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+thead {
+    background: #f8fafc;
+}
+
+th,
+td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #edf0f5;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    color: #475569;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+}
+
+tbody tr:hover {
+    background: #fafbff;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+td details {
+    position: relative;
+}
+
+td summary {
+    width: fit-content;
+    padding: 4px 9px;
+    border-radius: 5px;
+    cursor: pointer;
+    list-style: none;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+td summary::-webkit-details-marker {
+    display: none;
+}
+
+td details div {
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    top: 28px;
+    min-width: 110px;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.12);
+}
+
+td details div a,
+td details div button {
+    display: block;
+    width: 100%;
+    margin: 4px 0;
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 13px;
+}
+
+@media (max-width: 1000px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 650px) {
+    th,
+    td {
+        padding: 11px 12px;
+    }
+}

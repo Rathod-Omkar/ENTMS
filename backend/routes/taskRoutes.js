@@ -72,8 +72,28 @@ router.get("/", wrapAsync(async (req, res) => {
 
   if (req.query.dueFrom || req.query.dueTo) {
     filter.dueDate = {};
-    if (req.query.dueFrom) filter.dueDate.$gte = new Date(req.query.dueFrom);
-    if (req.query.dueTo) filter.dueDate.$lte = new Date(req.query.dueTo);
+
+    if (req.query.dueFrom) {
+      const from = new Date(req.query.dueFrom);
+
+      if (Number.isNaN(from.getTime())) {
+        return res.status(400).json({ message: "Invalid dueFrom date" });
+      }
+
+      from.setUTCHours(0, 0, 0, 0);
+      filter.dueDate.$gte = from;
+    }
+
+    if (req.query.dueTo) {
+      const to = new Date(req.query.dueTo);
+
+      if (Number.isNaN(to.getTime())) {
+        return res.status(400).json({ message: "Invalid dueTo date" });
+      }
+
+      to.setUTCHours(23, 59, 59, 999);
+      filter.dueDate.$lte = to;
+    }
   }
 
   if (req.query.search) {
@@ -92,18 +112,44 @@ router.get("/", wrapAsync(async (req, res) => {
     createdAt: { createdAt: -1 },
     dueDate: { dueDate: 1 },
     title: { title: 1 },
-    priority: { priority: -1 },
+    priority: { priority: 1 },
   };
+  let tasksQuery = Task.find(filter);
+
+  if (req.query.sort === "priority") {
+    tasksQuery = tasksQuery.sort({ priority: 1 });
+  }
 
   const sort = sortOptions[req.query.sort] || sortOptions.createdAt;
   const total = await Task.countDocuments(filter);
 
-  const tasks = await Task.find(filter)
-    .sort(sort)
-    .skip((page - 1) * limit)
-    .limit(limit)
-    .populate("assignedEmployee", "employeeId fullname department");
+  let tasks;
 
+  if (req.query.sort === "priority") {
+    const priorityOrder = {
+      Critical: 1,
+      High: 2,
+      Medium: 3,
+      Low: 4,
+    };
+
+    tasks = await Task.find(filter)
+      .populate("assignedEmployee", "employeeId fullname department");
+
+    tasks.sort(
+      (a, b) => priorityOrder[a.priority] - priorityOrder[b.priority]
+    );
+
+    tasks = tasks.slice((page - 1) * limit, page * limit);
+  } else {
+    const sort = sortOptions[req.query.sort] || sortOptions.createdAt;
+
+    tasks = await Task.find(filter)
+      .sort(sort)
+      .skip((page - 1) * limit)
+      .limit(limit)
+      .populate("assignedEmployee", "employeeId fullname department");
+  }
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 

@@ -1,0 +1,13 @@
+
+.main-content {
+    min-height: 100vh;
+    margin-left: 245px;
+    padding: 32px;
+}
+
+@media (max-width: 650px) {
+    .main-content {
+        margin-left: 66px;
+        padding: 18px 12px;
+    }
+}

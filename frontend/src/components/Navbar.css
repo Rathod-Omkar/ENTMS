@@ -1,0 +1,133 @@
+
+.sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    width: 245px;
+    padding: 24px 16px;
+    background: #111827;
+    color: #f8fafc;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 8px 28px;
+    border-bottom: 1px solid #293548;
+}
+
+.brand-icon {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: #4f46e5;
+    color: white;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.sidebar-brand h2 {
+    margin: 0;
+    color: white;
+    font-size: 16px;
+}
+
+.sidebar-brand p {
+    margin: 4px 0 0;
+    color: #9ca3af;
+    font-size: 12px;
+}
+
+.nav-section-label {
+    margin: 30px 10px 12px;
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    color: #cbd5e1;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.sidebar-nav .nav-link:hover {
+    background: #1f2937;
+    color: white;
+}
+
+.sidebar-nav .nav-link.active {
+    background: #3730a3;
+    color: white;
+    font-weight: 600;
+}
+
+.nav-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 22px;
+    font-size: 19px;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding: 16px 8px 0;
+    border-top: 1px solid #293548;
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+@media (max-width: 650px) {
+    .sidebar {
+        width: 66px;
+        padding: 18px 8px;
+    }
+
+    .sidebar-brand {
+        justify-content: center;
+        padding: 0 0 20px;
+    }
+
+    .sidebar-brand > div:last-child,
+    .nav-section-label,
+    .sidebar-footer,
+    .sidebar-nav .nav-link:not(.active) {
+        /* Navigation labels are hidden on narrow screens below. */
+    }
+
+    .sidebar-brand h2,
+    .sidebar-brand p,
+    .nav-section-label,
+    .sidebar-footer,
+    .sidebar-nav .nav-link {
+        font-size: 0;
+    }
+
+    .sidebar-nav .nav-link {
+        justify-content: center;
+        padding: 12px 4px;
+    }
+
+    .nav-icon {
+        font-size: 20px;
+    }
+}

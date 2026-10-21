@@ -69,6 +69,17 @@ const employeeSchema = new mongoose.Schema({
 employeeSchema.pre("validate", function () {
   if (this.status === "On Leave") {
     if (
+      this.status === "On Leave" &&
+      this.joining_date &&
+      this.leave_start &&
+      this.leave_start < this.joining_date
+    ) {
+      this.invalidate(
+        "leave_start",
+        "Leave start date cannot be before the joining date."
+      );
+    }
+    if (
       this.leave_start &&
       this.leave_end &&
       this.leave_end < this.leave_start

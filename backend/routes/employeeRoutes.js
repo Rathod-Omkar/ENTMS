@@ -10,7 +10,7 @@ router.get("/",wrapAsync(async (req,res)=>{
 }))
 
 router.get("/:id", wrapAsync(async (req, res) => {
-  const employee = await Employee.findOne({employeeId: req.params.id,});
+  const employee = await Employee.findById(req.params.id);
 
   if (!employee) {
     return res.status(404).json({
@@ -23,11 +23,7 @@ router.get("/:id", wrapAsync(async (req, res) => {
 
 router.delete("/:id", wrapAsync(async (req, res) => {
 
-    const { id } = req.params;
-
-    const employee = await Employee.findOne({
-      employeeId: id,
-    });
+    const employee = await Employee.findById(req.params.id);
 
     if (!employee) {
       return res.status(404).json({
@@ -71,9 +67,7 @@ router.post("/", wrapAsync(async (req, res) => {
 router.put("/:id", wrapAsync(async (req, res) => {
   const { id } = req.params;
 
-  const employee = await Employee.findOne({
-    employeeId: id,
-  });
+  const employee = await Employee.findById(id);
 
   if (!employee) {
     return res.status(404).json({

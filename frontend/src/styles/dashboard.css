@@ -1,0 +1,68 @@
+.dashboard {
+    padding: 0;
+}
+
+.dashboard-subtitle {
+    margin-top: 0;
+    margin-bottom: 28px;
+    color: var(--muted);
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.stat-card {
+    min-width: 0;
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.03);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+.stat-card p {
+    margin: 0 0 12px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.stat-card h3 {
+    margin: 0;
+    color: var(--text);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.overdue-card {
+    border-left: 4px solid var(--danger);
+}
+
+@media (max-width: 1000px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 16px;
+    }
+
+    .stat-card h3 {
+        font-size: 25px;
+    }
+}

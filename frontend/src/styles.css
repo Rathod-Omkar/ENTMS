@@ -1,0 +1,407 @@
+
+/* ---------- Global reset and theme ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #1e293b;
+    background: #f5f7fb;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --surface: #ffffff;
+    --danger: #dc2626;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+h1 {
+    margin: 0 0 10px;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.6px;
+}
+
+h2 {
+    margin: 28px 0 16px;
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* ---------- Buttons ---------- */
+
+button {
+    padding: 10px 15px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+button:hover:not(:disabled) {
+    background: #f1f5f9;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+}
+
+button[type="submit"] {
+    border-color: var(--primary);
+    background: var(--primary);
+    color: white;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+    background: var(--primary-hover);
+}
+
+/* ---------- Inputs and forms ---------- */
+
+input,
+select,
+textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background: white;
+    color: var(--text);
+    font: inherit;
+    font-size: 14px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 6px;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+form {
+    max-width: 650px;
+    margin-top: 24px;
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.03);
+}
+
+form input,
+form select,
+form textarea {
+    display: block;
+    margin-bottom: 16px;
+}
+
+form label {
+    margin-top: 4px;
+}
+
+/* ---------- Tables ---------- */
+
+table {
+    width: 100%;
+    margin-top: 22px;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+thead {
+    background: #f8fafc;
+}
+
+th,
+td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #edf0f5;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    color: #475569;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+}
+
+tbody tr:hover {
+    background: #fafbff;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+td details {
+    position: relative;
+}
+
+td summary {
+    width: fit-content;
+    padding: 4px 9px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+td details div {
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    top: 28px;
+    min-width: 110px;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.12);
+}
+
+td details div a,
+td details div button {
+    display: inline-block;
+    margin: 4px 0;
+}
+
+/* ---------- Task filters ---------- */
+
+.task-filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    align-items: end;
+    gap: 14px;
+    margin-top: 24px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+}
+
+.task-filters label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin: 0;
+}
+
+.task-filters button {
+    width: 100%;
+}
+
+/* ---------- Dashboard ---------- */
+
+.dashboard {
+    padding: 28px;
+}
+
+.dashboard-subtitle {
+    margin-top: 0;
+    margin-bottom: 28px;
+    color: var(--muted);
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.stat-card {
+    min-width: 0;
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.03);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+.stat-card p {
+    margin: 0 0 12px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.stat-card h3 {
+    margin: 0;
+    color: var(--text);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.overdue-card {
+    border-left: 4px solid var(--danger);
+}
+
+/* ---------- Details and messages ---------- */
+
+body #root > div {
+    color: var(--text);
+}
+
+.error,
+.error-message {
+    color: var(--danger);
+}
+
+.loading {
+    color: var(--muted);
+}
+
+/* ---------- Responsive layouts ---------- */
+
+@media (max-width: 1000px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 650px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .dashboard {
+        padding: 18px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 16px;
+    }
+
+    .stat-card h3 {
+        font-size: 25px;
+    }
+
+    .task-filters {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    form {
+        padding: 18px;
+    }
+
+    th,
+    td {
+        padding: 11px 12px;
+    }
+}
+
+
+/* Consistent page layout */
+
+.main-content > div > h1,
+.main-content > h1 {
+    margin-bottom: 20px;
+}
+
+.main-content > div > a[href*="/new"] {
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.main-content table {
+    border-radius: 10px;
+}
+
+.main-content .dashboard {
+    padding: 0;
+}
+
+.primary-btn {
+    display: inline-block;
+    padding: 10px 16px;
+    margin: 8px 0 18px;
+    border-radius: 7px;
+    background: #4f46e5;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.primary-btn:hover {
+    background: #4338ca;
+    color: white;
+    text-decoration: none;
+}
