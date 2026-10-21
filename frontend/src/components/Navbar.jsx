@@ -8,7 +8,7 @@ function Navbar() {
             <div className="sidebar-brand">
                 <div className="brand-icon">R</div>
                 <div>
-                    <h2>Roots Media</h2>
+                    <h2>Employee & Task</h2>
                     <p>Management Portal</p>
                 </div>
             </div>
