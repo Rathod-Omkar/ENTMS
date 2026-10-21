@@ -29,8 +29,9 @@
     border-radius: 50%;
     background: #292927;
     color: #f8c62c;
-    font-size: 23px;
+    font-size: 10px;
     font-weight: 800;
+    letter-spacing: -0.4px;
 }
 
 .sidebar-brand h2 {

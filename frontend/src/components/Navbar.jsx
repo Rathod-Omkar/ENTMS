@@ -6,7 +6,7 @@ function Navbar() {
     return (
         <aside className="sidebar">
             <div className="sidebar-brand">
-                <div className="brand-icon">R</div>
+                <div className="brand-icon">ENTM</div>
                 <div>
                     <h2>Employee & Task</h2>
                     <p>Management Portal</p>
